@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MoviesDataSync</string>
+    <string name="content_authority">com.delaroystudios.moviesdatasync</string>
+</resources>
