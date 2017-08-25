@@ -42,9 +42,18 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         movieAdapter = new MovieAdapter(this, null);
         recyclerView.setAdapter(movieAdapter);
 
+       // dbHelper = new MovieDbHelper(this);
+
         getLoaderManager().initLoader(MOVIE_LOADER,null,this);
 
 
+
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        MovieSyncAdapter.initializeSyncAdapter(this);
     }
 
     @Override

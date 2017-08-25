@@ -50,6 +50,16 @@
                 android:resource="@xml/syncadapter" />
         </service>
 
+        <activity
+            android:name=".DetailActivity"
+            android:label="Movies"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
 
         <provider
             android:name=".data.MovieProvider"
