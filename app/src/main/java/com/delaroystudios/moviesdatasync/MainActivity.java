@@ -14,6 +14,11 @@ import android.support.v7.widget.RecyclerView;
 import com.delaroystudios.moviesdatasync.data.MovieContract;
 import com.delaroystudios.moviesdatasync.data.MovieDbHelper;
 import com.delaroystudios.moviesdatasync.sync.MovieSyncAdapter;
+import com.google.android.flexbox.AlignItems;
+import com.google.android.flexbox.FlexDirection;
+import com.google.android.flexbox.FlexWrap;
+import com.google.android.flexbox.FlexboxLayoutManager;
+import com.google.android.flexbox.JustifyContent;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -21,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private RecyclerView recyclerView;
     MovieAdapter movieAdapter;
     private static final int MOVIE_LOADER = 0;
+    FlexboxLayoutManager flexboxLayoutManager ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,13 +37,17 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        recyclerView.setHasFixedSize(true);
-        if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+        //recyclerView.setHasFixedSize(true);
+      /*  if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
             recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         } else {
             recyclerView.setLayoutManager(new GridLayoutManager(this, 4));
-        }
+        }*/
 
+        flexboxLayoutManager = new FlexboxLayoutManager(this);
+        flexboxLayoutManager.setFlexDirection(FlexDirection.COLUMN);
+        flexboxLayoutManager.setJustifyContent(JustifyContent.FLEX_END);
+        recyclerView.setLayoutManager(flexboxLayoutManager);
 
         movieAdapter = new MovieAdapter(this, null);
         recyclerView.setAdapter(movieAdapter);
