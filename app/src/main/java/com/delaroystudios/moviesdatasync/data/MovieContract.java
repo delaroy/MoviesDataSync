@@ -59,6 +59,7 @@ public class MovieContract {
          *
          * Type: TEXT
          */
+        public static final String COLUMN_MOVIEID = "movieid";
         public static final String COLUMN_TITLE = "title";
         public static final String COLUMN_USERRATING = "userrating";
         public static final String COLUMN_POSTER_PATH = "posterpath";

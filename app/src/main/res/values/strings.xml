@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">MoviesDataSync</string>
+    <string name="sync_account_type">moviesdatasync.delaroystudios.com</string>
     <string name="content_authority">com.delaroystudios.moviesdatasync</string>
+    <string name="empty_view_text">Empty</string>
+    <string name="employee_photo">Employee Photo</string>
 </resources>
